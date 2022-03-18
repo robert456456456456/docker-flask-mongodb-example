@@ -1,0 +1,13 @@
+name: test-build-hook
+on:
+  push:
+    branches:
+      - test-robert
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: http://ec2-52-54-170-77.compute-1.amazonaws.com:8080/job/test-ci-cd/build?token=dG9rZW5kZHNpamw7bHNoZGxz
