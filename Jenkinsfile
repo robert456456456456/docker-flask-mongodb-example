@@ -7,7 +7,7 @@ node{
     stage ('checkout'){
               checkout scm
           stage ('check'){
-              sh 'pwd; ls;kubectl apply -f ./kubernetes;kubectl get services;kubectl get pods'
+              sh 'kubectl apply -f ./kubernetes;kubectl get services;kubectl get pods'
         }
       }
 }
