@@ -8,5 +8,5 @@ spec:
   ports:
   - protocol: "TCP"
     port: 82
-    targetPort: 5000
+    targetPort: 2002
   type: LoadBalancer
