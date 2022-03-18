@@ -7,10 +7,8 @@ node{
 
     stage ('checkout'){
               checkout scm
-
           stage ('check'){
               sh 'pwd; ls'
-
         }
       }
 
