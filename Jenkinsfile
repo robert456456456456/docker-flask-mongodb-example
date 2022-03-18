@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-node("master"){
+node{
     stage('Clean up Workspace')
     {
       deleteDir()
