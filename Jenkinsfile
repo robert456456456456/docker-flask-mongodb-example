@@ -16,7 +16,7 @@ node{
           sh'kubectl get services;kubectl get pods'
         }
     stage('Open Ports For Services'){
-            sh 'pkill -f "port-forward"'
+            try{sh 'pkill -f "port-forward"'}catch (Exception e) {sh 'echo port not forward '}
             sh 'JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/random-demo-service '+_port_random_demo+':'_port_random_demo+'&> /dev/null &'
             sh 'JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/fulltext-search-service '+_port_fulltext_search+':'_port_fulltext_search+'&> /dev/null &'
         }
