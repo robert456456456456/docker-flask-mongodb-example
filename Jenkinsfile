@@ -22,5 +22,6 @@ node{
         }
     stage('Post Deploy Test'){
       sh 'wget http://ec2-52-54-170-77.compute-1.amazonaws.com:2101/apidocs/ && echo "WE GOT IT" || echo "Failure"'
+      sh 'wget http://ec2-52-54-170-77.compute-1.amazonaws.com:2102/apidocs/ && echo "WE GOT IT" || echo "Failure"'
     }
 }
