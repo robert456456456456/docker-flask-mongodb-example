@@ -19,4 +19,4 @@ spec:
           command: ["python", "/root/flask-mongodb-example/random_demo.py", "mongodb-service.default.svc.cluster.local"]
           imagePullPolicy: Always
           ports:
-            - containerPort: 2003
+            - containerPort: 5000
