@@ -21,7 +21,7 @@ node{
             sh 'JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/fulltext-search-service '+_port_fulltext_search+':'+_port_fulltext_search+'&> /dev/null &'
         }
     stage('Post Deploy Test'){
-      sh 'wget http://ec2-52-54-170-77.compute-1.amazonaws.com:2101/apidocs/ && echo "WE GOT IT" || echo "Failure"'
-      sh 'wget http://ec2-52-54-170-77.compute-1.amazonaws.com:2102/apidocs/ && echo "WE GOT IT" || echo "Failure"'
+      sh 'wget http://ec2-52-54-170-77.compute-1.amazonaws.com:'+_port_random_demo+'/apidocs/ && echo "WE GOT IT";exit 0 || echo "Failure";exit 1'
+      sh 'wget http://ec2-52-54-170-77.compute-1.amazonaws.com:'+_port_fulltext_search+'/apidocs/ && echo "WE GOT IT";exit 0 || echo "Failure";exit 1'
     }
 }
