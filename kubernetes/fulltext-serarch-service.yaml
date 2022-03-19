@@ -7,6 +7,6 @@ spec:
     app: fulltext-search
   ports:
   - protocol: "TCP"
-    port: 80
-    targetPort: 2002
+    port: 82
+    targetPort: 5000
   type: LoadBalancer
