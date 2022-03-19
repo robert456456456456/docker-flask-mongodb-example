@@ -15,4 +15,4 @@ spec:
           service:
             name: fulltext-search-service
             port:
-              number: 80
+              number: 8585
