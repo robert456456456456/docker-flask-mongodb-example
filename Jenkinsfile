@@ -14,7 +14,7 @@ node{
           sh'kubectl get services;kubectl get pods'
         }
     stage('Open Ports For Services'){
-            sh 'kubectl port-forward --address 0.0.0.0 services/random-demo-service 2101:2101 &'
-            sh 'kubectl port-forward --address 0.0.0.0 services/fulltext-search-service 2102:2102 &'
+            sh 'kubectl port-forward  services/random-demo-service 2101:2101 > /dev/null 2>&1'
+            sh 'kubectl port-forward  services/fulltext-search-service 2102:2102 > /dev/null 2>&1'
         }
 }
