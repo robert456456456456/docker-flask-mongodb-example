@@ -7,6 +7,6 @@ spec:
     app: random-demo
   ports:
   - protocol: "TCP"
-    port: 800
+    port: 2101
     targetPort: 5000
   type: LoadBalancer
