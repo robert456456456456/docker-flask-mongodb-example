@@ -24,10 +24,7 @@ def creat_list_port(_random_):
 if __name__ == '__main__':
     _random_ = replace_random()
     _ports_ = creat_list_port(_random_)
-    os.system("kubectl create namespace "+_ports_[3])
-    os.system("JENKINS_NODE_COOKIE = dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/random-demo-service-"+_ports_[0]+" "+ _ports_[2]+":"+ _ports_[2]+" & > /dev/null & ")
-    os.system("JENKINS_NODE_COOKIE = dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/fulltext-search-service-"+_ports_[0]+" "+_ports_[0]+":"+_ports_[0]+" & > /dev/null & ")
-
+    os.system("kubectl create namespace "+_ports_[3]+"Ports you run in this Branche" +_ports_)
     replace_word("kubernetes/mongodb-deplyment.yaml", "templet", _ports_[3])
     replace_word("kubernetes/mongodb-service.yaml", "templet", _ports_[3])
     replace_word("kubernetes/mongodb-service.yaml", "mongodb-service", "mongodb-service-"+_ports_[0])
@@ -43,5 +40,3 @@ if __name__ == '__main__':
     replace_word("kubernetes/random-demo-service.yaml", "random-demo-service", "random-demo-service-"+ _ports_[0])
     replace_word("kubernetes/random-demo-deplyment.yaml", "mongodb-service", "mongodb-service-"+_ports_[0])
     replace_word("kubernetes/fulltext-search-deplyment.yaml", "mongodb-service", "mongodb-service-" + _ports_[0])
-   #replace_word("kubernetes/random-demo-deplyment.yaml", "local", "local:" + _ports_[1])
-    #replace_word("kubernetes/fulltext-search-deplyment.yaml", "local", "local:" + _ports_[1])
