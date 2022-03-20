@@ -18,7 +18,7 @@ def replace_word(infile, old_word, new_word):
 
 
 def creat_list_port(_random_):
-    return _random_,str(int(_random_)+1),str(int(_random_)+2),"default"+_random_
+    return _random_,str(int(_random_)+1),str(int(_random_)+2),"templet"+_random_
 
 
 if __name__ == '__main__':
@@ -28,12 +28,12 @@ if __name__ == '__main__':
     replace_word("kubernetes/fulltext-serarch-service.yaml", "2102", _ports_[0])
     replace_word("kubernetes/mongodb-service.yaml", "27017", _ports_[1])
     replace_word("kubernetes/random-demo-service.yaml", "2101", _ports_[2])
-    replace_word("kubernetes/fulltext-search-deplyment.yaml", "default", _ports_[3])
-    replace_word("kubernetes/mongodb-deplyment.yaml", "default", _ports_[3])
-    replace_word("kubernetes/random-demo-deplyment.yaml", "default", _ports_[3])
-    replace_word("kubernetes/fulltext-serarch-service.yaml", "default", _ports_[3])
-    replace_word("kubernetes/mongodb-service.yaml", "default", _ports_[3])
-    replace_word("kubernetes/random-demo-service.yaml", "default", _ports_[3])
+    replace_word("kubernetes/fulltext-search-deplyment.yaml", "templet", _ports_[3])
+    replace_word("kubernetes/mongodb-deplyment.yaml", "templet", _ports_[3])
+    replace_word("kubernetes/random-demo-deplyment.yaml", "templet", _ports_[3])
+    replace_word("kubernetes/fulltext-serarch-service.yaml", "templet", _ports_[3])
+    replace_word("kubernetes/mongodb-service.yaml", "templet", _ports_[3])
+    replace_word("kubernetes/random-demo-service.yaml", "templet", _ports_[3])
     replace_word("kubernetes/fulltext-serarch-service.yaml", "fulltext-search-service","fulltext-search-service-"+ _ports_[0])
     replace_word("kubernetes/mongodb-service.yaml", "mongodb-service", "mongodb-service-"+_ports_[0])
     replace_word("kubernetes/random-demo-service.yaml", "random-demo-service", "random-demo-service-"+ _ports_[0])
