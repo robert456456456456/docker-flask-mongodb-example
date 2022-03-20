@@ -22,10 +22,10 @@ node{
           sh 'kubectl get services -A;kubectl get pods -A'
         }
     stage('Open Ports For Services'){
-            sh 'JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/random-demo-service-2101 '+_port_random_demo+':'+_port_random_demo+'&> /dev/null &'
-            sh 'JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/fulltext-search-service-2101 '+_port_fulltext_search+':'+_port_fulltext_search+'&> /dev/null &'
-            sh 'JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/random-demo-service-2001 '+_port_random_demo_+':'+_port_random_demo_+'&> /dev/null &'
-            sh 'JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/fulltext-search-service-2001 '+_port_fulltext_search_+':'+_port_fulltext_search_+'&> /dev/null &'
+            sh 'JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/random-demo-service-2101 '+_port_random_demo+':'+_port_random_demo+' -n templet2101 &> /dev/null &'
+            sh 'JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/fulltext-search-service-2101 '+_port_fulltext_search+':'+_port_fulltext_search+' -n templet2101 &> /dev/null &'
+            sh 'JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/random-demo-service-2001 '+_port_random_demo_+':'+_port_random_demo_+' -n templet2001 &> /dev/null &'
+            sh 'JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/fulltext-search-service-2001 '+_port_fulltext_search_+':'+_port_fulltext_search_+' -n templet2001 &> /dev/null &'
         }
     stage('Post Deploy Test'){
       sh 'wget http://ec2-52-54-170-77.compute-1.amazonaws.com:'+_port_random_demo_+'/apidocs/ && echo "WE GOT IT";exit 0 || echo "Failure";exit 1'
