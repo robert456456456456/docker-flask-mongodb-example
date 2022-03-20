@@ -25,8 +25,9 @@ if __name__ == '__main__':
     _random_ = replace_random()
     _ports_ = creat_list_port(_random_)
     os.system("kubectl create namespace "+_ports_[3])
-    #replace_word("kubernetes/mongodb-service.yaml", "27017", _ports_[1])
-    #replace_word("kubernetes/mongodb-deplyment.yaml", "27017", _ports_[1])
+    os.system("JENKINS_NODE_COOKIE = dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/random-demo-service-"+_ports_[0]+" "+ _ports_[2]+":"+ _ports_[2]+" & > /dev/null & ")
+    os.system("JENKINS_NODE_COOKIE = dontKillMe nohup kubectl port-forward --address 0.0.0.0 services/fulltext-search-service-"+_ports_[0]+" "+_ports_[0]+":"+_ports_[0]+" & > /dev/null & ")
+
     replace_word("kubernetes/mongodb-deplyment.yaml", "templet", _ports_[3])
     replace_word("kubernetes/mongodb-service.yaml", "templet", _ports_[3])
     replace_word("kubernetes/mongodb-service.yaml", "mongodb-service", "mongodb-service-"+_ports_[0])
