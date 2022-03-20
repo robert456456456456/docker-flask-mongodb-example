@@ -24,7 +24,7 @@ def creat_list_port(_random_):
 if __name__ == '__main__':
     _random_ = replace_random()
     _ports_ = creat_list_port(_random_)
-    os.system("kubectl create namespace "+_ports_[3]+"Ports you run in this Branche" +_ports_)
+    os.system("kubectl create namespace "+_ports_[3]+";echo Ports you run in this Branche" +_ports_)
     replace_word("kubernetes/mongodb-deplyment.yaml", "templet", _ports_[3])
     replace_word("kubernetes/mongodb-service.yaml", "templet", _ports_[3])
     replace_word("kubernetes/mongodb-service.yaml", "mongodb-service", "mongodb-service-"+_ports_[0])
