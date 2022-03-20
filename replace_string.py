@@ -40,4 +40,4 @@ if __name__ == '__main__':
     replace_word("kubernetes/random-demo-deplyment.yaml", "mongodb-service", "mongodb-service-"+_ports_[0])
     replace_word("kubernetes/fulltext-search-deplyment.yaml", "mongodb-service", "mongodb-service-" + _ports_[0])
     replace_word("kubernetes/random-demo-deplyment.yaml", "local", "local:" + _ports_[1])
-    replace_word("kubernetes/fulltext-search-deplyment.yaml", "local", "local" + _ports_[1])
+    replace_word("kubernetes/fulltext-search-deplyment.yaml", "local", "local:" + _ports_[1])
