@@ -27,6 +27,7 @@ if __name__ == '__main__':
     os.system("kubectl create namespace "+_ports_[3])
     replace_word("kubernetes/fulltext-serarch-service.yaml", "2102", _ports_[0])
     replace_word("kubernetes/mongodb-service.yaml", "27017", _ports_[1])
+    replace_word("kubernetes/mongodb-deplyment.yaml", "27017", _ports_[1])
     replace_word("kubernetes/random-demo-service.yaml", "2101", _ports_[2])
     replace_word("kubernetes/fulltext-search-deplyment.yaml", "templet", _ports_[3])
     replace_word("kubernetes/mongodb-deplyment.yaml", "templet", _ports_[3])
