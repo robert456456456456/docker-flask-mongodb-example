@@ -37,3 +37,5 @@ if __name__ == '__main__':
     replace_word("kubernetes/fulltext-serarch-service.yaml", "fulltext-search-service","fulltext-search-service-"+ _ports_[0])
     replace_word("kubernetes/mongodb-service.yaml", "mongodb-service", "mongodb-service-"+_ports_[0])
     replace_word("kubernetes/random-demo-service.yaml", "random-demo-service", "random-demo-service-"+ _ports_[0])
+    replace_word("kubernetes/random-demo-deplyment.yaml", "mongodb-service", "mongodb-service-"+_ports_[0])
+    replace_word("kubernetes/fulltext-search-deplyment.yaml", "mongodb-service", "mongodb-service-" + _ports_[0])
