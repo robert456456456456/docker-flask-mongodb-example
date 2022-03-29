@@ -2,7 +2,7 @@ name: test-build-hook
 on:
   push:
     branches:
-      - test-robert
+      - master
 jobs:
   curl:
     runs-on: ubuntu-latest
