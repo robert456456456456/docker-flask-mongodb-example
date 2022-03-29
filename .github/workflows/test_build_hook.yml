@@ -1,0 +1,13 @@
+name: test-build-hook
+on:
+  push:
+    branches:
+      - test-robert
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: wget
+      uses: wei/wget@v1
+      with:
+        args: ${{ secrets.JENKIN_URL }}/job/test-ci-cd/build?token=${{ secrets.JENKIN_TOCKEN }}
